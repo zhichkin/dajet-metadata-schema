@@ -1,4 +1,5 @@
 ﻿using DaJet.Metadata.Model;
+using JUST;
 using System;
 using System.CommandLine;
 using System.CommandLine.Invocation;
@@ -38,6 +39,9 @@ namespace DaJet.Metadata.Schema.UI
         }
         private static void ExecuteCommand(string ms, string pg, string d, string u, string p, string m, FileInfo outFile)
         {
+            TransformJson();
+            return;
+
             if (string.IsNullOrWhiteSpace(ms) && string.IsNullOrWhiteSpace(pg))
             {
                 ShowErrorMessage(SERVER_IS_NOT_DEFINED_ERROR); return;
@@ -147,6 +151,23 @@ namespace DaJet.Metadata.Schema.UI
                 {
                     writer.Write(schema);
                 }
+            }
+        }
+
+
+        private static void TransformJson()
+        {
+            string input = File.ReadAllText("C:\\temp\\json_transform\\InformationRegister.json");
+
+            string transformer = File.ReadAllText("C:\\temp\\json_transform\\transfrom-rules.json");
+
+            string outputFile = "C:\\temp\\json_transform\\result.json";
+
+            string output = new JsonTransformer().Transform(transformer, input);
+
+            using (StreamWriter writer = new StreamWriter(outputFile, false, Encoding.UTF8))
+            {
+                writer.Write(output);
             }
         }
     }

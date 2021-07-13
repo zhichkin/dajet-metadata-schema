@@ -1,0 +1,11 @@
+{
+  "Type": "#concat(РегистрСведений,#substring(#valueof($.#type),#lastindexof(#valueof($.#type),.),#subtract(#length(#valueof($.#type)),#lastindexof(#valueof($.#type),.))))",
+  "Filter": { "#loop($.#value.Filter)":
+              {
+                "Name": "#currentvalueatpath($.Name.#value)",
+                "Type": "#currentvalueatpath($.Value.#type)",
+                "Value": "#currentvalueatpath($.Value.#value)"
+              }
+            },
+  "Records": "#valueof($.#value.Record)"
+}

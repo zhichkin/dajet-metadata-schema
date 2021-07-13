@@ -1,0 +1,55 @@
+﻿{
+  "Type": "РегистрСведений.ПериодическийМногоРегистраторов",
+  "Filter": [
+    {
+      "Name": "Recorder",
+      "Type": "jcfg:DocumentRef.ОбычныйДокумент",
+      "Value": "09738c52-e30c-11eb-9cac-1e086ba0b1a1"
+    },
+    {
+      "Name": "NumberValue",
+      "Type": "jxs:number",
+      "Value": 123.45
+    },
+    {
+      "Name": "BooleanValue",
+      "Type": "jxs:boolean",
+      "Value": true
+    }
+  ],
+  "Records": [
+    {
+      "Recorder": {
+        "#type": "jcfg:DocumentRef.ОбычныйДокумент",
+        "#value": "09738c52-e30c-11eb-9cac-1e086ba0b1a1"
+      },
+      "Period": "2021-01-02T01:00:00",
+      "Active": true,
+      "Измерение1": "Значение1",
+      "Ресурс1": "Значение1",
+      "Реквизит1": "Значение1"
+    },
+    {
+      "Recorder": {
+        "#type": "jcfg:DocumentRef.ОбычныйДокумент",
+        "#value": "09738c52-e30c-11eb-9cac-1e086ba0b1a1"
+      },
+      "Period": "2021-01-02T02:00:00",
+      "Active": true,
+      "Измерение1": "Значение2",
+      "Ресурс1": "Значение2",
+      "Реквизит1": "Значение2"
+    },
+    {
+      "Recorder": {
+        "#type": "jcfg:DocumentRef.ОбычныйДокумент",
+        "#value": "09738c52-e30c-11eb-9cac-1e086ba0b1a1"
+      },
+      "Period": "2021-01-03T03:00:00",
+      "Active": true,
+      "Измерение1": "Значение3",
+      "Ресурс1": "Значение3",
+      "Реквизит1": "Значение3"
+    }
+  ]
+}
